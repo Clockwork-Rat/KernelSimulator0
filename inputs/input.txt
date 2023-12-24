@@ -1,0 +1,4 @@
+# Memory in System
+MEM: 32
+# Operations per Cycle
+OPP: 4
