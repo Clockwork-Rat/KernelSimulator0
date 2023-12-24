@@ -16,13 +16,15 @@ int test_equals() {
     int16_t int_2 = 16;
     int16_t int_3 = 8;
 
-    assert_true(equals(int_1, int_2, sizeof(int16_t), sizeof(int16_t)));
-    assert_zero(equals(int_1, int_3, sizeof(int16_t), sizeof(int16_t)));
+    assert_true(equals(&int_1, &int_2, sizeof(int16_t), sizeof(int16_t)));
+    assert_zero(equals(&int_1, &int_3, sizeof(int16_t), sizeof(int16_t)));
 
     return 0;
 }
 
 int main(int argc, char **argv) {
+    printf("Utilities Tests:\n");
+
     int (*tests[])() = {&test_equals};
 
     for ( size_t i = 0; i < 1; ++i ) {

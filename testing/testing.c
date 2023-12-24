@@ -22,7 +22,3 @@ bool assert_zero(int value) {
 bool assert_not_zero(int value) {
     assert(value != 0);
 }
-
-int main(int argc, char **argv) {
-    //collect and run all tests
-}
