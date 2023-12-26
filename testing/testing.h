@@ -9,7 +9,7 @@
 #include "utils.h"
 
 int print_result();
-int run_test( int (*func)() );
+int run_test( int (*func)(), size_t *number );
 bool assert_true(int value);
 bool assert_equal(void *a, void *b, size_t a_size, size_t b_size);
 bool assert_zero(int value);
