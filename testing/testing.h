@@ -10,9 +10,9 @@
 
 int print_result();
 int run_test( int (*func)(), size_t *number );
-bool assert_true(int value);
-bool assert_equal(void *a, void *b, size_t a_size, size_t b_size);
-bool assert_zero(int value);
-bool assert_not_zero(int value);
+int assert_true(int value);
+int assert_equal(void *a, void *b, size_t a_size, size_t b_size);
+int assert_zero(int value);
+int assert_not_zero(int value);
 
 #endif

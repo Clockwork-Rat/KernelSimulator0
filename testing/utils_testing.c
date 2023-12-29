@@ -4,40 +4,47 @@
 
 int test_str_equals() {
 
+    int result = 0;
+
     char str_1[] = "Hello!";
     char str_2[] = "Hello!";
     char str_3[] = "Bye!";
 
     //test should fail here if it fails
-    assert_true(equals(str_1, str_2, 6, 6));
-    assert_zero(equals(str_1, str_3, 6, 4));
+    result += assert_true(equals(str_1, str_2, 6, 6));
+    result += (equals(str_1, str_3, 6, 4));
 
-    return 0;
+    return result;
 }
 
 int test_integer_equals() {
+
+    int result = 0;
 
     int16_t int_1 = 16;
     int16_t int_2 = 16;
     int16_t int_3 = 8;
 
-    assert_true(equals(&int_1, &int_2, sizeof(int16_t), sizeof(int16_t)));
-    assert_zero(equals(&int_1, &int_3, sizeof(int16_t), sizeof(int16_t)));
+    result += assert_true(equals(&int_1, &int_2, sizeof(int16_t), sizeof(int16_t)));
+    result += assert_zero(equals(&int_1, &int_3, sizeof(int16_t), sizeof(int16_t)));
 
-    return 0;
+    return result;
 }
 
 int test_floating_point_equals() {
+
+    int result = 0;
+
     size_t s = sizeof(float);
     
     float f_1 = 4.1f;
     float f_2 = 4.1f;
     float f_3 = 9.3f;
 
-    assert_true(equals(&f_1, &f_2, s, s));
-    assert_zero(equals(&f_1, &f_3, s, s));
+    result += assert_true(equals(&f_1, &f_2, s, s));
+    result += assert_zero(equals(&f_1, &f_3, s, s));
 
-    return 0;
+    return result;
 }
 
 typedef struct test_struct {
